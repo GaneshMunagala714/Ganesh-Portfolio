@@ -1,256 +1,833 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Taraka Naga Ganesh Munagala</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Jersey+25&family=Atkinson+Hyperlegible+Mono&display=swap" rel="stylesheet">
+  <title>Taraka Naga Ganesh Munagala</title>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: "Atkinson Hyperlegible Mono", monospace;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-				<h1 style = "font-size: 40px; text-transform: uppercase;"><strong>Taraka Naga Ganesh Munagala</strong></h1>
-				</div>
-				<div class="col-4 col-12-small">
-					<ul class="labeled-icons">
-					</ul>
-				</div>
-			</header>
+    /* Navbar */
+    .navbar-bg {
+      background: url('images/bg1.png') center/cover;
+      min-height: 100vh;
+      position: relative;
+    }
 
-		<!-- Main -->
-			<div id="main">
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+      background: #00238e;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
 
-				<!-- One -->
-					<section id="one">
-						<h1>About Me</h1>
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 20px;
+      flex-wrap: wrap;
+    }
 
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<h5>Hi! I am Taraka Naga Ganesh Munagala, a Master's student in Data Science at the University of New Haven. I hold a Bachelor's degree in Mechanical Engineering from Rajiv Gandhi University of Knowledge Technologies, India.
-								</h5>
-								
-								<h5>My goal is to build intelligent systems and data-driven solutions that create real-world impact. I am passionate about machine learning, natural language processing, and cloud-based data engineering. My specific interest is to explore methods that properly and efficiently utilize multimodal data to create reliable representations for data science and machine perception applications.
-								</h5>
+    .navbar button {
+      border: 2px solid white;
+      background: #00238e;
+      color: rgb(243, 247, 192);
+      font-size: 14px;
+      border-radius: 5px;
+      padding: 12px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: "Atkinson Hyperlegible Mono", monospace;
+    }
 
-								<h5>News: I am currently working as a Research Assistant at the University of New Haven, developing predictive models and automated ETL workflows using AWS, Python, and SQL. Actively looking for opportunities in Data Science and ML Engineering!</h5>
+    .navbar button:hover {
+      transform: translateY(3px);
+    }
 
-							</article>
+    /* Profile Photo */
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid rgb(243, 247, 192);
+      box-shadow: -4px 4px 0px #000;
+      object-fit: cover;
+      margin-bottom: 25px;
+    }
 
+    /* Title Section */
+    .title-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
 
-                            <article class="col-6 col-12-xsmall work-item">
-                                <a href="images/profile.JPG">
-                                    <img src="images/profile.JPG" alt="" class="hover-img" width="300" height="300" style="object-fit: cover; border-radius: 8px;"/>
-                                </a>
-                            </article>
-                            
-                            <style>
-                            .hover-img {
-                                transition: all 0.3s ease-in-out;
-                            }
-                            
-                            .hover-img:hover {
-                                content: url('images/profile-1.jpg');
-                            }
-                            </style>
-						</div>
-					</section>
+    .title {
+      font-family: "Jersey 25", sans-serif;
+      color: rgb(243, 247, 192);
+      text-align: center;
+    }
 
-				<!-- Two - Experience -->
-					<section id="two">
-						<h1>Experience</h1>
+    .title h1 {
+      font-family: "Press Start 2P", cursive;
+      font-size: 32px;
+      margin: 15px 0;
+      text-shadow: -3px 3px 0px #000;
+      line-height: 1.4;
+    }
 
-                        <h2>Research Assistant</h2>
-						<h5> <span style='font-weight: bold;'>University of New Haven, West Haven, CT | Oct 2025 – Present</span></h5>
-						
-						<h5>
-							• Tracking national student enrollment trends using institutional datasets and public sources.<br>
-							• Building dashboards in Power BI, Tableau, and Python for enrollment and demographic analysis.<br>
-							• Designing automated ETL workflows using Python, SQL, and AWS (S3, Lambda, Glue, Athena).<br>
-							• Developing predictive models to identify enrollment patterns and program demand.<br>
-							• Delivering KPI-driven insights to support academic planning and decision-making.
-						</h5>
+    .title h2 {
+      font-size: 36px;
+      margin: 10px 0;
+    }
 
-						<a href="images/Edupredict%20Dashboard%20.png" class="image fit thumb"><img src="images/Edupredict%20Dashboard%20.png" alt="" /></a>
+    .title h3 {
+      font-size: 22px;
+      margin: 10px 0;
+      line-height: 1.4;
+    }
 
-						<ul class="actions">
-							<li><a href="https://GaneshMunagala714.github.io/Edupredict-/" class="button">Details</a></li>
-							<li><a href="https://github.com/GaneshMunagala714/Edupredict-" class="button">Code</a></li>
-						</ul>
+    .paper-plane-div img {
+      width: 80px;
+      animation: sway 2s ease-in-out infinite;
+    }
 
-					</section>
+    .paper-plane1 { transform: translateY(-20px); }
+    .paper-plane2 { transform: translateY(20px); }
 
-				<!-- Three - Publications -->
-					<section id="three">
-						<h1>Publications</h1>
+    @keyframes sway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+    }
 
-                        <h5>Research publications coming soon. Stay tuned!</h5>
+    /* Countdown Section */
+    .time-left-div {
+      text-align: center;
+      padding: 20px;
+    }
 
-                        <hr />
-                        <h2>Sample Publication Template</h2>
-						<h5> <span style='font-weight: bold;'>Your Name*, Co-author*, Other Authors.</span></h5>
-						<div class="venue"><b><p>Conference/Journal Name Year.</p></b></div>
-						<a href="images/placeholder.png" class="image fit thumb"><img src="images/placeholder.png" alt="" /></a>
+    .countdown {
+      display: inline-flex;
+      border: 3px solid rgb(243, 247, 192);
+      border-radius: 5px;
+      padding: 15px 30px;
+      gap: 35px;
+      font-family: "Jersey 25", sans-serif;
+      color: rgb(243, 247, 192);
+    }
 
-						<ul class="actions">
-							<li><a href="#" class="button">Paper</a></li>
-							<li><a href="#" class="button">Code</a></li>
-						</ul>
+    .countdown div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-					</section>
+    .countdown span:first-child {
+      font-size: 36px;
+      font-weight: bold;
+    }
 
-				<!-- Four - Tools -->
-					<section id="four">
-						<h1>Tools & Skills</h1>
+    .countdown .label {
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
 
-                        <h2>Programming & Languages</h2>
-						<h5>Python, SQL</h5>
+    /* Clouds */
+    .cloud-div {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      margin-top: 30px;
+    }
 
-						<hr />
-                        <h2>Machine Learning & Deep Learning</h2>
-						<h5>Scikit-learn, Random Forest, Regression, Classification, TensorFlow, PyTorch, Transformers (BERT/RoBERTa), NER, Text Processing</h5>
+    .cloud1-img { height: 100px; }
+    .cloud2-img { 
+      height: 200px; 
+      transform: translateY(-100px);
+      animation: float 6s ease-in-out infinite;
+    }
 
-						<hr />
-                        <h2>Cloud & Data Engineering</h2>
-						<h5>AWS (S3, Lambda, Glue, Athena, QuickSight), Apache Spark (PySpark), Hadoop (basic), ETL Pipelines, APIs</h5>
+    @keyframes float {
+      0%, 100% { transform: translateY(-100px); }
+      50% { transform: translateY(-120px); }
+    }
 
-						<hr />
-                        <h2>Visualization & Tools</h2>
-						<h5>Power BI, Tableau, QuickSight, Matplotlib, Seaborn, Git, Jupyter, Pandas, NumPy, SQLite</h5>
+    /* Border Section */
+    .border-div {
+      background: linear-gradient(150deg, #00238e, #483fa5);
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      padding: 40px 20px;
+      text-align: center;
+      color: rgb(243, 247, 192);
+    }
 
-					</section>
+    .border-div p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.6;
+    }
 
-				<!-- Five - Projects -->
-					<section id="five">
-						<h1>Projects</h1>
+    /* About Section */
+    .navbar-bg2 {
+      background: url('images/bg2.png') center/cover;
+      padding: 60px 20px;
+    }
 
-                        <h2>AI Nutrition Label Chatbot</h2>
-						<h5> <span style='font-weight: bold;'>AI-powered nutrition label extraction and health classification chatbot using OCR and Deep Learning.</span></h5>
-						<h5>
-							<b>Problem:</b> Understanding nutrition labels is challenging due to inconsistent units, complex ingredients, and lack of contextual health interpretation.<br><br>
-							<b>Solution:</b> Built an end-to-end intelligent system that automates nutrition extraction, normalizes data, classifies food healthiness using ANN, and provides chatbot-based explanations.<br><br>
-							<b>Key Features:</b><br>
-							• OCR text extraction using Tesseract/EasyOCR from food label images<br>
-							• Data preprocessing pipeline for unit normalization and missing value handling<br>
-							• Artificial Neural Network (ANN) with multi-layer perceptron for health classification<br>
-							• Classification into Healthy, Moderate, and Unhealthy categories<br>
-							• Chatbot explanation module for answering nutrition queries<br><br>
-							<b>Tech Stack:</b> Python, Jupyter Notebook, TensorFlow/PyTorch, Tesseract OCR, Pandas, NumPy, Scikit-learn<br><br>
-							<b>Outcome:</b> Achieved automated health classification with explainable AI pipeline, reducing manual nutrition analysis time significantly.
-						</h5>
-						<a href="images/Ai%20Nutrition%20chat%20bot.png"><img src="images/Ai%20Nutrition%20chat%20bot.png" alt="" width="400" height="300"/></a>
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
-						
-						<ul class="actions">
-							<li><a href="https://github.com/GaneshMunagala714/AI-Nutrition-label-Chatbot" class="button">Details</a></li>
-							<li><a href="https://github.com/GaneshMunagala714/AI-Nutrition-label-Chatbot" class="button">Code</a></li>
-						</ul>
+    .section-title h1 {
+      font-family: "Press Start 2P", cursive;
+      color: rgb(243, 247, 192);
+      font-size: 28px;
+      text-shadow: -2px 2px 0px #000;
+    }
 
-                        <hr />
-                        <h2>Clinical Text De-Identification System</h2>
-						<h5> <span style='font-weight: bold;'>HIPAA-compliant PHI removal system for clinical text using transformer-based NLP models.</span></h5>
-						<h5>
-							<b>Problem:</b> Clinical notes contain sensitive Protected Health Information (PHI) that must be removed before sharing for research or analysis, while preserving clinical meaning.<br><br>
-							<b>Solution:</b> Developed an automated anonymization pipeline that identifies and replaces PHI entities with standardized tokens while maintaining text structure for downstream analysis.<br><br>
-							<b>Key Features:</b><br>
-							• Named Entity Recognition using BERT/RoBERTa transformers for identifying PHI entities<br>
-							• Custom regex rules for pattern-based PHI detection (dates, IDs, phone numbers)<br>
-							• Anonymization pipeline replacing entities with tokens: [NAME], [DATE], [ID], [LOCATION]<br>
-							• High recall on sensitive entity detection ensuring HIPAA compliance<br>
-							• Preservation of clinical context after de-identification<br><br>
-							<b>Tech Stack:</b> Python, HuggingFace Transformers, SpaCy, BERT/RoBERTa, Regex, Pandas<br><br>
-							<b>Outcome:</b> Successfully processed clinical documents with high accuracy in PHI detection, ensuring compliance for healthcare data sharing.
-						</h5>
-						<!-- Workflow Diagram -->
-						<h4 style="margin: 20px 0 15px 0; color: #333;">Clinical De-Identification Pipeline</h4>
-						<a href="images/Clinincal%20workflow.png"><img src="images/Clinincal%20workflow.png" alt="" width="700" height="400"/></a>
-						<div style="margin-top: 15px; font-size: 14px; color: #666; text-align: center;">
-							<b>Result:</b> 96.2% F1-score on PHI detection | HIPAA Compliant
-						</div>
+    .info-div {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-						<ul class="actions">
-							<li><a href="https://github.com/GaneshMunagala714" class="button">Details</a></li>
-							<li><a href="https://github.com/GaneshMunagala714" class="button">Code</a></li>
-						</ul>
+    .info-card {
+      background: #8a54a9;
+      border: 2px solid rgb(243, 247, 192);
+      border-radius: 5px;
+      padding: 25px;
+      width: 320px;
+      min-height: 220px;
+      color: rgb(243, 247, 192);
+    }
 
-                        
-						<hr />
-						<h2>YouTube Data Analysis Optimization</h2>
-						<h5> <span style='font-weight: bold;'>AWS-based ETL pipeline for large-scale YouTube video data analysis and visualization.</span></h5>
-						<h5>
-							<b>Problem:</b> Analyzing 100K+ YouTube video records requires scalable infrastructure for data processing, storage, and visualization with real-time querying capabilities.<br><br>
-							<b>Solution:</b> Architected a serverless data pipeline using AWS services for automated ETL, efficient querying, and interactive dashboards for business insights.<br><br>
-							<b>Key Features:</b><br>
-							• AWS Glue ETL pipeline for extracting and transforming 100K+ YouTube video records<br>
-							• AWS Athena for serverless SQL querying on processed data<br>
-							• Sentiment analysis on video comments and descriptions<br>
-							• Time-series analysis to identify trending content patterns by region<br>
-							• Amazon QuickSight dashboards with 65% improvement in analytical clarity<br>
-							• Automated data cataloging and schema management<br><br>
-							<b>Tech Stack:</b> AWS Glue, AWS Athena, Amazon QuickSight, Python, Pandas, SQL<br><br>
-							<b>Outcome:</b> Enabled stakeholders to identify regional content preferences and trending patterns through interactive dashboards, improving content strategy decisions.
-						</h5>
+    .info-card h1 {
+      font-family: "Jersey 25", sans-serif;
+      font-size: 26px;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
 
-						<a href="images/youtube.png" class="image fit thumb"><img src="images/youtube.png" alt="" /></a>
+    .info-card p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-						
-								<ul class="actions">
-									<li><a href="https://github.com/GaneshMunagala714" class="button">Details</a></li>
-									<li><a href="https://github.com/GaneshMunagala714" class="button">Code</a></li>
-								</ul>
+    /* Experience Section */
+    .border-div2 {
+      background: linear-gradient(-150deg, #483fa5, #004b8b);
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      padding: 50px 20px;
+      text-align: center;
+      color: rgb(243, 247, 192);
+    }
 
-                        
-					</section>
+    .border-div2 h1 {
+      font-family: "Press Start 2P", cursive;
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-shadow: -2px 2px 0px #000;
+    }
 
-				<!-- Six - CV -->
-					<section id="six">
-						<h1>Curriculum Vitae</h1>
-						<!-- Wrapper -->
-						<div id="wrapper">
+    .experience-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 15px;
+      line-height: 1.8;
+    }
 
-							<!-- Main -->
-								<div id="cv_main">
-									<div class="inner">
+    .experience-content strong {
+      color: rgb(243, 247, 192);
+      font-size: 18px;
+    }
 
-										<!-- Content -->
-											<section>
-												<header class="main">
-													<iframe src="assets/resume.pdf" width="100%" height="900px">
-													</iframe>
-												</header>
-											</section>
-									</div>
-								</div>
-						</div>
+    /* Projects Section */
+    .navbar-bg3 {
+      background: url('images/bg3.png') center/cover;
+      padding: 60px 20px;
+    }
 
-					</section>
+    .gallery-title h1 {
+      font-family: "Press Start 2P", cursive;
+      color: rgb(243, 247, 192);
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: -3px 3px 0px #000;
+    }
 
-			</div>
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/GaneshMunagala714" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://linkedin.com/in/taraka-naga-ganesh-munagala" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-					<li><a href="mailto:tarakanagaganeshmunagala@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</div>
-			</footer>
+    .project-card {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgb(243, 247, 192);
+      border-radius: 5px;
+      padding: 20px;
+      transition: transform 0.2s;
+      color: rgb(243, 247, 192);
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
 
-	</body>
+    .project-card h3 {
+      font-family: "Jersey 25", sans-serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 14px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .project-card a {
+      color: rgb(243, 247, 192);
+      text-decoration: underline;
+      margin-right: 15px;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.9);
+      border-radius: 5px;
+      margin-bottom: 15px;
+      border: 2px solid rgb(243, 247, 192);
+    }
+
+    /* Publications Section */
+    .border-div3 {
+      background: linear-gradient(150deg, #004b8b, #483fa5);
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      padding: 50px 20px;
+      text-align: center;
+      color: rgb(243, 247, 192);
+    }
+
+    .border-div3 h1 {
+      font-family: "Press Start 2P", cursive;
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-shadow: -2px 2px 0px #000;
+    }
+
+    .pub-card {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgb(243, 247, 192);
+      border-radius: 5px;
+      padding: 25px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .pub-card h3 {
+      font-family: "Jersey 25", sans-serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .pub-authors {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 5px;
+    }
+
+    .pub-venue {
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .pub-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .pub-card a {
+      color: rgb(243, 247, 192);
+      text-decoration: underline;
+      margin-right: 15px;
+    }
+
+    /* Skills Section */
+    .navbar-bg4 {
+      background: url('images/bg4.png') center/cover;
+      padding: 60px 20px;
+    }
+
+    .skills-section h1 {
+      font-family: "Press Start 2P", cursive;
+      color: rgb(243, 247, 192);
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: -3px 3px 0px #000;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .skill {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgb(243, 247, 192);
+      border-radius: 5px;
+      padding: 25px;
+      text-align: center;
+      color: rgb(243, 247, 192);
+      transition: transform 0.2s;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill h3 {
+      font-family: "Jersey 25", sans-serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .skill p {
+      font-size: 14px;
+    }
+
+    /* Contact Section - Horizontal Scroll */
+    .contact-section {
+      background: linear-gradient(180deg, #1a1a2e, #16213e);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact-section h1 {
+      font-family: "Press Start 2P", cursive;
+      color: rgb(243, 247, 192);
+      font-size: 28px;
+      margin-bottom: 40px;
+      text-shadow: -3px 3px 0px #000;
+    }
+
+    .contact-grid {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .contact-card {
+      min-width: 280px;
+      background: #556a9c;
+      border: 2px solid rgb(243, 247, 192);
+      border-radius: 10px;
+      padding: 30px;
+      color: rgb(243, 247, 192);
+      box-shadow: -3px 3px 0 #000;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      text-align: center;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-card h2 {
+      font-family: "Jersey 25", sans-serif;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card a {
+      color: rgb(243, 247, 192);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: #202020;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 20px 0;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: rgb(243, 247, 192);
+    }
+
+    /* Mobile */
+    @media (max-width: 750px) {
+      .hamburger { display: block; }
+      
+      .navbar {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 20px;
+        background: #00238e;
+        padding: 15px;
+        border-radius: 5px;
+        z-index: 1000;
+      }
+      
+      .navbar.open { display: flex; }
+      
+      .title h1 { font-size: 18px; }
+      .title h2 { font-size: 26px; }
+      .title h3 { font-size: 16px; }
+      
+      .countdown { gap: 15px; padding: 10px 20px; }
+      .countdown span:first-child { font-size: 24px; }
+      
+      .paper-plane-div { display: none; }
+      
+      .skills-grid { grid-template-columns: 1fr; }
+      
+      .info-div { flex-direction: column; align-items: center; }
+      
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero Section -->
+  <div class="navbar-bg">
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+    <nav class="navbar" id="navbar">
+      <a href="#about"><button>About</button></a>
+      <a href="#experience"><button>Experience</button></a>
+      <a href="#projects"><button>Projects</button></a>
+      <a href="#publications"><button>Publications</button></a>
+      <a href="#skills"><button>Skills</button></a>
+      <a href="#contact"><button>Contact</button></a>
+    </nav>
+
+    <div class="title-div">
+      <div class="paper-plane-div">
+        <img class="paper-plane1" src="images/pplane1.png" alt="">
+      </div>
+
+      <div class="title">
+        <img src="images/profile.jpg" alt="Profile Photo" class="profile-photo">
+        <h1>Taraka Naga Ganesh Munagala</h1>
+        <h2>Turning Data into Decisions</h2>
+        <h3>Master's in Data Science<br>University of New Haven</h3>
+      </div>
+
+      <div class="paper-plane-div">
+        <img class="paper-plane2" src="images/pplane2.png" alt="">
+      </div>
+    </div>
+    
+    <div class="time-left-div">
+      <div class="countdown">
+        <div>
+          <span>ML</span>
+          <span class="label">Engineer</span>
+        </div>
+        <div>
+          <span>DS</span>
+          <span class="label">Scientist</span>
+        </div>
+        <div>
+          <span>AI</span>
+          <span class="label">Researcher</span>
+        </div>
+        <div>
+          <span>DE</span>
+          <span class="label">Engineer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cloud-div">
+      <img class="cloud1-img" src="images/cloud1.png" alt="">
+      <img class="cloud2-img" src="images/cloud2.png" alt="">
+    </div>
+  </div>
+
+  <!-- Intro Section -->
+  <div class="border-div">
+    <p>
+      Welcome to my portfolio! I'm a Data Science Master's student at the University of New Haven 
+      with a passion for machine learning, NLP, and cloud-based data engineering. 
+      I build intelligent systems that transform data into actionable insights.
+    </p>
+  </div>
+
+  <!-- About Section -->
+  <div class="navbar-bg2" id="about">
+    <div class="section-title">
+      <h1>About Me</h1>
+    </div>
+
+    <div class="info-div">
+      <div class="info-card">
+        <h1>Background</h1>
+        <p>
+          Master's student in Data Science at University of New Haven. 
+          Bachelor's in Mechanical Engineering from RGUKT, India. 
+          I bridge engineering principles with data-driven solutions.
+        </p>
+      </div>
+      
+      <div class="info-card">
+        <h1>Focus</h1>
+        <p>
+          Machine Learning, Natural Language Processing, 
+          Cloud Data Engineering, and Predictive Analytics. 
+          Passionate about multimodal data systems.
+        </p>
+      </div>
+      
+      <div class="info-card">
+        <h1>Status</h1>
+        <p>
+          Currently a Research Assistant at UNH. 
+          Developing predictive models and automated ETL workflows 
+          using AWS, Python, and SQL. Open to opportunities!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience Section -->
+  <div class="border-div2" id="experience">
+    <h1>Experience</h1>
+    <div class="experience-content">
+      <p>
+        <strong>Research Assistant</strong> - University of New Haven, West Haven, CT (Oct 2025 - Present)<br><br>
+        • Tracking national student enrollment trends using institutional datasets and public sources<br>
+        • Building dashboards in Power BI, Tableau, and Python for enrollment and demographic analysis<br>
+        • Designing automated ETL workflows using Python, SQL, and AWS (S3, Lambda, Glue, Athena)<br>
+        • Developing predictive models to identify enrollment patterns and program demand<br>
+        • Delivering KPI-driven insights to support academic planning and decision-making<br><br>
+        <strong>Featured Project:</strong> EduPredict Dashboard - A comprehensive analytics dashboard for university AI/ML program enrollment decisions<br>
+        <a href="https://GaneshMunagala714.github.io/Edupredict-/" target="_blank">Live Demo</a> | 
+        <a href="https://github.com/GaneshMunagala714/Edupredict-" target="_blank">GitHub</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="navbar-bg3" id="projects">
+    <div class="gallery-title">
+      <h1>Projects</h1>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="images/edupredict.png" alt="EduPredict Dashboard" class="project-img">
+        <h3>EduPredict</h3>
+        <p>Predictive dashboard for university AI/ML enrollment decisions. Analyzes 503 graduate programs with PPP-adjusted affordability calculators.</p>
+        <p>
+          <a href="https://GaneshMunagala714.github.io/Edupredict-/" target="_blank">Live</a> | 
+          <a href="https://github.com/GaneshMunagala714/Edupredict-" target="_blank">Code</a>
+        </p>
+      </div>
+
+      <div class="project-card">
+        <img src="images/nutrition.png" alt="AI Nutrition Chatbot" class="project-img">
+        <h3>AI Nutrition Chatbot</h3>
+        <p>OCR-powered nutrition extraction with health classification. Extracts data from food labels, normalizes units, classifies using ANN.</p>
+        <p>
+          <a href="https://github.com/GaneshMunagala714/AI-Nutrition-label-Chatbot" target="_blank">Code</a>
+        </p>
+      </div>
+
+      <div class="project-card">
+        <img src="images/clinical.png" alt="Clinical De-Identification" class="project-img">
+        <h3>Clinical De-Identification</h3>
+        <p>HIPAA-compliant PHI removal using BERT/RoBERTa transformers. Identifies and anonymizes sensitive health info with 96.2% F1-score.</p>
+        <p>
+          <a href="https://github.com/GaneshMunagala714" target="_blank">Code</a>
+        </p>
+      </div>
+
+      <div class="project-card">
+        <img src="images/youtube.png" alt="YouTube Data Analysis" class="project-img">
+        <h3>YouTube Data Analysis</h3>
+        <p>AWS ETL pipeline processing 100K+ records. Serverless architecture with Glue, Athena, QuickSight dashboards for trend analysis.</p>
+        <p>
+          <a href="https://github.com/GaneshMunagala714" target="_blank">Code</a>
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div style="width:100%;height:160px;background:linear-gradient(135deg,#f39c12,#e67e22);border-radius:5px;margin-bottom:15px;border:2px solid rgb(243,247,192);display:flex;align-items:center;justify-content:center;font-family:'Jersey 25';font-size:36px;color:rgb(243,247,192);">Fraud</div>
+        <h3>Fraud Detection</h3>
+        <p>ML-based fraud detection for financial transactions using ensemble methods. Real-time prediction with feature engineering.</p>
+        <p>
+          <a href="https://github.com/GaneshMunagala714/Fraud-detection" target="_blank">Code</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Publications Section -->
+  <div class="border-div3" id="publications">
+    <h1>Publications</h1>
+    <div class="pub-card">
+      <h3>The AI Education Gap: Open-Source Decision Tools for STEM Students</h3>
+      <p class="pub-authors">Shruti Brahma, Taraka Naga Ganesh Munagala, Bharadwaj Gottimukkala</p>
+      <p class="pub-venue">University of New Haven, 2025</p>
+      <p class="pub-desc">
+        Open-source decision-support platform for international students navigating U.S. graduate AI programs. 
+        Integrated 7 data sources (SEVIS, IPEDS, BLS, LinkedIn, arXiv, World Bank, USCIS) analyzing 503 programs 
+        to quantify barriers: geographic concentration (46% in 5 states), affordability disparities (10:1 cost variance), 
+        and visa sponsorship patterns (42% of employers). Implements PPP-adjusted calculators, employment pathway 
+        visualizations, and peer comparison tools.
+      </p>
+      <p>
+        <a href="file:///Users/munagalatarakanagaganesh/Desktop/Edu/Paper/final_isec__new%20(3).pdf" target="_blank">Paper PDF</a> | 
+        <a href="https://github.com/GaneshMunagala714/Edupredict-" target="_blank">Code</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="navbar-bg4" id="skills">
+    <div class="skills-section">
+      <h1>Skills</h1>
+    </div>
+    <div class="skills-grid">
+      <div class="skill">
+        <h3>Python</h3>
+        <p>ML, Data Analysis, ETL</p>
+      </div>
+      <div class="skill">
+        <h3>AWS</h3>
+        <p>S3, Glue, Athena, Lambda</p>
+      </div>
+      <div class="skill">
+        <h3>NLP</h3>
+        <p>BERT, Transformers, NER</p>
+      </div>
+      <div class="skill">
+        <h3>SQL</h3>
+        <p>Querying, Optimization</p>
+      </div>
+      <div class="skill">
+        <h3>Power BI</h3>
+        <p>Dashboards, Visualization</p>
+      </div>
+      <div class="skill">
+        <h3>TensorFlow</h3>
+        <p>Neural Networks, Deep Learning</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact-section" id="contact">
+    <h1>Contact</h1>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h2>GitHub</h2>
+        <p>View my projects</p>
+        <p><a href="https://github.com/GaneshMunagala714" target="_blank">github.com/GaneshMunagala714</a></p>
+      </div>
+
+      <div class="contact-card">
+        <h2>LinkedIn</h2>
+        <p>Connect professionally</p>
+        <p><a href="https://linkedin.com/in/taraka-naga-ganesh-munagala" target="_blank">LinkedIn Profile</a></p>
+      </div>
+
+      <div class="contact-card">
+        <h2>Email</h2>
+        <p>Reach out directly</p>
+        <p><a href="mailto:tarakanagaganeshmunagala@gmail.com">tarakanagaganeshmunagala@gmail.com</a></p>
+      </div>
+
+      <div class="contact-card">
+        <h2>Phone</h2>
+        <p>Call or text</p>
+        <p><a href="tel:+12036758428">+1 (203) 675-8428</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com/GaneshMunagala714" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/taraka-naga-ganesh-munagala" target="_blank">LinkedIn</a>
+      <a href="mailto:tarakanagaganeshmunagala@gmail.com">Email</a>
+    </div>
+    <p>&copy; 2026 Taraka Naga Ganesh Munagala</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('open');
+    }
+  </script>
+
+</body>
 </html>
